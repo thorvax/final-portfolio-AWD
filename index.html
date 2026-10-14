@@ -59,12 +59,12 @@
         px-5
         py-4
       ">
-      <a class="
+      <a id="tagline" class="
           text-lg
           font-bold
           tracking-wide
           text-cyan-300
-        " href="#home">Marc Whesley</a>
+        " href="#home"></a>
       <button id="menu-toggle" class="
           inline-flex
           min-h-11
@@ -165,9 +165,6 @@
           [&>a]:px-6
           [&>a]:py-3
           [&>a]:font-semibold
-
-          [&>a]:focus-visible:outline-2
-          [&>a]:focus-visible:outline-offset-4
         ">
         <a class="
             bg-cyan-300
@@ -263,8 +260,23 @@
             <span>Food discovery</span>
             <span>Stories and series</span>
           </div>
+
+          <button onclick="randomFact()" class="
+              mt-4
+              rounded-full
+              bg-indigo-600 
+              px-4 
+              py-2 
+              text-white 
+              hover:bg-indigo-500
+              ">
+            Fun facts</button>
+          <p id="fact" class="mt-2 italic"></p>
+          <script>
+          </script>
         </div>
       </div>
+
     </section>
 
     <section id="skills" class="
@@ -337,6 +349,12 @@
             <li>UI/UX fundamentals</li>
             <li>HTML and Tailwind CSS</li>
             <li>Vanilla JavaScript</li>
+            <li>Basic microcontroller programming</li>
+            <li>Basic API integration</li>
+
+            <li>SketchUp</li>
+            <li>Basic 3D modellig and animation</li>
+            <li>Basic network troubleshooting</li>
           </ul>
         </article>
         <article>
