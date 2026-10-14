@@ -1,282 +1,824 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Marc Whesley Bartolome's student portfolio, projects, skills, and contact information." />
-    <meta name="theme-color" content="#07111f" />
-    <title>Marc Whesley Bartolome | Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @layer components {
-        .skill-panel {
-          @apply rounded-2xl border border-white/10 bg-slate-900/70 p-6;
+<html lang="en" class="
+  scroll-smooth
+">
 
-          & h3 {
-            @apply text-lg font-semibold text-white;
-          }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Marc Whesley Bartolome's student portfolio, projects, skills, and contact information." />
+  <meta name="theme-color" content="#07111f" />
+  <title>Marc Whesley Bartolome | Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="js/main.js" defer></script>
+</head>
 
-          & ul {
-            @apply mt-4 flex flex-wrap gap-2;
-          }
+<body class="
+    min-h-screen
+    bg-fixed
+    bg-gradient-to-br
+    from-indigo-950
+    via-indigo-950
+    to-cyan-900
+    text-slate-100
+    selection:bg-cyan-300
+    selection:text-slate-950
+  ">
+  <a href="#main-content" class="
+      sr-only
+      rounded
+      bg-cyan-300
+      px-4
+      py-2
+      text-slate-950
+      focus:not-sr-only
+      focus:fixed
+      focus:left-4
+      focus:top-4
+      focus:z-50
+    ">Skip to content</a>
 
-          & li {
-            @apply rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-200;
-          }
-        }
+  <header class="
+      sticky
+      top-0
+      z-40
+      border-b
+      border-white/10
+      bg-slate-950/90
+      backdrop-blur
+    ">
+    <div class="
+        mx-auto
+        flex
+        max-w-6xl
+        flex-wrap
+        items-center
+        justify-between
+        gap-4
+        px-5
+        py-4
+      ">
+      <a class="
+          text-lg
+          font-bold
+          tracking-wide
+          text-cyan-300
+        " href="#home">Marc Whesley</a>
+      <button id="menu-toggle" class="
+          inline-flex
+          min-h-11
+          min-w-11
+          items-center
+          justify-center
+          rounded-lg
+          border
+          border-white/15
+          text-2xl
+          text-cyan-200
+          hover:bg-white/10
+          focus-visible:outline-2
+          focus-visible:outline-offset-2
+          focus-visible:outline-cyan-300
+          md:hidden
+        " type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="primary-navigation" class="
+          hidden
+          w-full
+          flex-col
+          gap-1
+          md:flex
+          md:w-auto
+          md:flex-row
+          md:items-center
+          md:gap-2
 
-        .project-card {
-          @apply overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70;
-          transition: transform 180ms ease, border-color 180ms ease;
+          [&>a]:rounded-lg
+          [&>a]:px-3
+          [&>a]:py-2
+          [&>a]:text-sm
+          [&>a]:font-medium
+          [&>a]:text-slate-300
 
-          &:hover {
-            @apply border-cyan-300/50;
-            transform: translateY(-0.25rem);
-          }
+          [&>a:hover]:bg-white/10
+          [&>a:hover]:text-cyan-200
 
-          & > img {
-            @apply aspect-[16/10] w-full object-cover;
-          }
+          [&>a:focus-visible]:outline-2
+          [&>a:focus-visible]:outline-cyan-300
+        " aria-label="Main navigation">
+        <a data-nav-link href="#home">Home</a>
+        <a data-nav-link href="#about">About</a>
+        <a data-nav-link href="#skills">Skills</a>
+        <a data-nav-link href="#projects">Projects</a>
+        <a data-nav-link href="#education">Education</a>
+        <a data-nav-link href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-          & > div {
-            @apply p-5;
-          }
+  <main id="main-content" class="
+      mx-auto
+      max-w-6xl
+      px-5
+    ">
+    <section id="home" class="
+        scroll-mt-28
+        py-24
+        text-center
+        sm:py-32
+      ">
+      <p class="
+          mb-4
+          text-sm
+          font-semibold
+          uppercase
+          tracking-[0.25em]
+          text-cyan-300
+        ">Aspiring IT Professional</p>
+      <h1 class="
+          mx-auto
+          max-w-4xl
+          text-4xl
+          font-bold
+          tracking-tight
+          text-white
+          sm:text-6xl
+        ">Marc Whesley Bartolome</h1>
+      <p class="
+          mx-auto
+          mt-6
+          max-w-2xl
+          text-lg
+          leading-8
+          text-slate-300
+        ">I enjoy exploring technology, building useful software, and bringing creative ideas to life through code.</p>
+      <div class="
+          mt-9
+          flex
+          flex-wrap
+          justify-center
+          gap-4
 
-          & h3 {
-            @apply text-xl font-semibold text-white;
-          }
+          [&>a]:rounded-full
+          [&>a]:px-6
+          [&>a]:py-3
+          [&>a]:font-semibold
 
-          & p {
-            @apply mt-3 leading-6 text-slate-300;
-          }
-
-          & ul {
-            @apply mt-4 flex flex-wrap gap-2;
-          }
-
-          & li {
-            @apply rounded-full bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100;
-          }
-        }
-
-        .contact-form {
-          @apply mt-6 space-y-5;
-
-          & label {
-            @apply mb-2 block text-sm font-medium text-slate-200;
-          }
-
-          & input,
-          & textarea {
-            @apply min-h-12 w-full rounded-lg border border-slate-600 bg-slate-950 px-4 py-3 text-white placeholder:text-slate-500;
-
-            &:focus {
-              @apply border-cyan-300 outline-none ring-2 ring-cyan-300/30;
-            }
-          }
-
-          & textarea {
-            @apply min-h-36 resize-y;
-          }
-
-          & button {
-            @apply min-h-12 rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950 transition;
-
-            &:hover {
-              @apply bg-cyan-200;
-            }
-
-            &:focus-visible {
-              @apply outline-2 outline-offset-4 outline-cyan-200;
-            }
-          }
-
-          & #form-status {
-            @apply min-h-6 text-sm text-slate-200;
-          }
-        }
-      }
-    </style>
-    <script src="js/main.js" defer></script>
-  </head>
-  <body class="min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-300 selection:text-slate-950">
-    <a href="#main-content" class="sr-only rounded bg-cyan-300 px-4 py-2 text-slate-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50">Skip to content</a>
-
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4">
-        <a class="text-lg font-bold tracking-wide text-cyan-300" href="#home">Marc Whesley</a>
-        <button id="menu-toggle" class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/15 text-2xl text-cyan-200 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 md:hidden" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
-          <span aria-hidden="true">☰</span>
-        </button>
-        <nav id="primary-navigation" class="hidden w-full flex-col gap-1 md:flex md:w-auto md:flex-row md:items-center md:gap-2" aria-label="Main navigation">
-          <a data-nav-link href="#home" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">Home</a>
-          <a data-nav-link href="#about" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">About</a>
-          <a data-nav-link href="#skills" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">Skills</a>
-          <a data-nav-link href="#projects" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">Projects</a>
-          <a data-nav-link href="#education" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">Education</a>
-          <a data-nav-link href="#contact" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-cyan-300">Contact</a>
-        </nav>
+          [&>a]:focus-visible:outline-2
+          [&>a]:focus-visible:outline-offset-4
+        ">
+        <a class="
+            bg-cyan-300
+            text-slate-950
+            transition
+            hover:bg-cyan-200
+            focus-visible:outline-cyan-200
+          " href="#projects">Explore my projects</a>
+        <a class="
+            border
+            border-slate-500
+            text-slate-100
+            transition
+            hover:border-cyan-300
+            hover:text-cyan-200
+            focus-visible:outline-cyan-300
+          " href="#contact">Get in touch</a>
       </div>
-    </header>
+    </section>
 
-    <main id="main-content" class="mx-auto max-w-6xl px-5">
-      <section id="home" class="scroll-mt-28 py-24 text-center sm:py-32">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">Aspiring IT Professional</p>
-        <h1 class="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl">Marc Whesley Bartolome</h1>
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">I enjoy exploring technology, building useful software, and bringing creative ideas to life through code.</p>
-        <div class="mt-9 flex flex-wrap justify-center gap-4">
-          <a class="rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200" href="#projects">Explore my projects</a>
-          <a class="rounded-full border border-slate-500 px-6 py-3 font-semibold text-slate-100 transition hover:border-cyan-300 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300" href="#contact">Get in touch</a>
-        </div>
-      </section>
+    <section id="about" class="
+        scroll-mt-28
+        border-t
+        border-white/10
+        py-16
+        sm:py-20
+      ">
+      <div class="
+          grid
+          items-center
+          gap-10
+          md:grid-cols-[220px_1fr]
+        ">
+        <img class="
+            mx-auto
+            h-48
+            w-48
+            rounded-full
+            border-4
+            border-cyan-300/30
+            object-cover
+            shadow-xl
+            shadow-cyan-950/50
+            md:h-52
+            md:w-52
+          " src="assets/images/profile/1x1-photo-of-myself.jpg" alt="Portrait of Marc Whesley Bartolome" />
+        <div>
+          <p class="
+              mb-2
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+              text-cyan-300
+            ">About me</p>
+          <h2 class="
+              text-3xl
+              font-bold
+              text-white
+              sm:text-4xl
+            ">Curious by nature, building one project at a time.</h2>
+          <p class="
+              mt-5
+              max-w-3xl
+              leading-7
+              text-slate-300
+            ">Hello! I'm Marc Whesley. I am interested in programming, technology, and design. I like learning by
+            making things, solving practical problems, and sharing what I discover along the way.</p>
+          <p class="
+              mt-4
+              max-w-3xl
+              leading-7
+              text-slate-300
+            ">My goal is to keep growing as an IT professional and create software that is useful, thoughtful, and easy
+            for people to use.</p>
+          <div class="
+              mt-6
+              flex
+              flex-wrap
+              gap-2
 
-      <section id="about" class="scroll-mt-28 border-t border-white/10 py-16 sm:py-20">
-        <div class="grid items-center gap-10 md:grid-cols-[220px_1fr]">
-          <img class="mx-auto h-48 w-48 rounded-full border-4 border-cyan-300/30 object-cover shadow-xl shadow-cyan-950/50 md:h-52 md:w-52" src="assets/images/profile/1x1-photo-of-myself.jpg" alt="Portrait of Marc Whesley Bartolome" />
-          <div>
-            <p class="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">About me</p>
-            <h2 class="text-3xl font-bold text-white sm:text-4xl">Curious by nature, building one project at a time.</h2>
-            <p class="mt-5 max-w-3xl leading-7 text-slate-300">Hello! I'm Marc Whesley. I am interested in programming, technology, and design. I like learning by making things, solving practical problems, and sharing what I discover along the way.</p>
-            <p class="mt-4 max-w-3xl leading-7 text-slate-300">My goal is to keep growing as an IT professional and create software that is useful, thoughtful, and easy for people to use.</p>
-            <div class="mt-6 flex flex-wrap gap-2" aria-label="Personal interests">
-              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-sm text-cyan-100">Programming</span>
-              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-sm text-cyan-100">Technology</span>
-              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-sm text-cyan-100">Food discovery</span>
-              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-sm text-cyan-100">Stories and series</span>
-            </div>
+              [&>span]:rounded-full
+              [&>span]:border
+              [&>span]:border-cyan-300/20
+              [&>span]:bg-cyan-300/10
+              [&>span]:px-3
+              [&>span]:py-1
+              [&>span]:text-sm
+              [&>span]:text-cyan-100
+            " aria-label="Personal interests">
+            <span>Programming</span>
+            <span>Technology</span>
+            <span>Food discovery</span>
+            <span>Stories and series</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="skills" class="scroll-mt-28 border-t border-white/10 py-16 sm:py-20">
-        <div class="mb-8 max-w-2xl">
-          <p class="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">What I work with</p>
-          <h2 class="text-3xl font-bold text-white sm:text-4xl">Skills</h2>
-          <p class="mt-3 leading-7 text-slate-300">A growing mix of programming, interface design, and database skills. These labels describe areas I have practiced; they are not percentage ratings.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2">
-          <article class="skill-panel">
-            <h3>Technical skills</h3>
-            <ul>
-              <li>Java</li>
+    <section id="skills" class="
+        scroll-mt-28
+        border-t
+        border-white/10
+        py-16
+        sm:py-20
+      ">
+      <div class="
+          mb-8
+          max-w-2xl
+        ">
+        <p class="
+            mb-2
+            text-sm
+            font-semibold
+            uppercase
+            tracking-[0.2em]
+            text-cyan-300
+          ">What I work with</p>
+        <h2 class="
+            text-3xl
+            font-bold
+            text-white
+            sm:text-4xl
+          ">Skills</h2>
+        <p class="
+            mt-3
+            leading-7
+            text-slate-300
+          ">A growing mix of programming, interface design, and database skills. These labels describe areas I have
+          practiced; they are not percentage ratings.</p>
+      </div>
+      <div class="
+          grid
+          gap-6
+          md:grid-cols-2
+
+          [&>article]:rounded-2xl
+          [&>article]:border
+          [&>article]:border-white/10
+          [&>article]:bg-slate-900/70
+          [&>article]:p-6
+
+          [&>article>h3]:text-lg
+          [&>article>h3]:font-semibold
+          [&>article>h3]:text-white
+
+          [&>article>ul]:mt-4
+          [&>article>ul]:flex
+          [&>article>ul]:flex-wrap
+          [&>article>ul]:gap-2
+
+          [&>article>ul>li]:rounded-lg
+          [&>article>ul>li]:bg-slate-800
+          [&>article>ul>li]:px-3
+          [&>article>ul>li]:py-2
+          [&>article>ul>li]:text-sm
+          [&>article>ul>li]:text-slate-200
+        ">
+        <article>
+          <h3>Technical skills</h3>
+          <ul>
+            <li>Java</li>
+            <li>C++</li>
+            <li>PHP</li>
+            <li>Java Swing</li>
+            <li>Database management</li>
+            <li>UI/UX fundamentals</li>
+            <li>HTML and Tailwind CSS</li>
+            <li>Vanilla JavaScript</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ways I work</h3>
+          <ul>
+            <li>Problem solving</li>
+            <li>Curiosity</li>
+            <li>Creativity</li>
+            <li>Continuous learning</li>
+            <li>Attention to detail</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="
+        scroll-mt-28
+        border-t
+        border-white/10
+        py-16
+        sm:py-20
+      ">
+      <div class="
+          mb-8
+          max-w-2xl
+        ">
+        <p class="
+            mb-2
+            text-sm
+            font-semibold
+            uppercase
+            tracking-[0.2em]
+            text-cyan-300
+          ">Selected work</p>
+        <h2 class="
+            text-3xl
+            font-bold
+            text-white
+            sm:text-4xl
+          ">Projects</h2>
+        <p class="
+            mt-3
+            leading-7
+            text-slate-300
+          ">A few examples of what I have built and what I am learning.</p>
+      </div>
+      <div class="
+          grid
+          gap-6
+          md:grid-cols-2
+          lg:grid-cols-3
+
+          [&>article]:overflow-hidden
+          [&>article]:rounded-2xl
+          [&>article]:border
+          [&>article]:border-white/10
+          [&>article]:bg-slate-900/70
+          [&>article]:transition
+
+          [&>article:hover]:-translate-y-1
+          [&>article:hover]:border-cyan-300/50
+
+          [&>article>img]:aspect-[16/10]
+          [&>article>img]:w-full
+          [&>article>img]:object-cover
+
+          [&>article>div]:p-5
+
+          [&>article>div>h3]:text-xl
+          [&>article>div>h3]:font-semibold
+          [&>article>div>h3]:text-white
+
+          [&>article>div>p]:mt-3
+          [&>article>div>p]:leading-6
+          [&>article>div>p]:text-slate-300
+
+          [&>article>div>ul]:mt-4
+          [&>article>div>ul]:flex
+          [&>article>div>ul]:flex-wrap
+          [&>article>div>ul]:gap-2
+
+          [&>article>div>ul>li]:rounded-full
+          [&>article>div>ul>li]:bg-cyan-300/10
+          [&>article>div>ul>li]:px-3
+          [&>article>div>ul>li]:py-1
+          [&>article>div>ul>li]:text-xs
+          [&>article>div>ul>li]:text-cyan-100
+        ">
+        <article>
+          <img src="assets/images/projects/space_eater.png" alt="Space Eater C++ project artwork" loading="lazy" />
+          <div>
+            <h3>Space Eater Background Program</h3>
+            <p>A C++ background application that launches automatically on startup and runs quietly outside the taskbar.
+            </p>
+            <ul aria-label="Tools used">
               <li>C++</li>
-              <li>PHP</li>
-              <li>Java Swing</li>
-              <li>Database management</li>
-              <li>UI/UX fundamentals</li>
-              <li>HTML and Tailwind CSS</li>
+              <li>File handling</li>
+              <li>System operations</li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <img src="assets/images/projects/vending_machine.png" alt="Vending Machine System project artwork"
+            loading="lazy" />
+          <div>
+            <h3>Vending Machine System</h3>
+            <p>A Java desktop application that simulates a vending machine with a graphical interface and
+              object-oriented design.</p>
+            <ul aria-label="Tools used">
+              <li>Java</li>
+              <li>Swing UI</li>
+              <li>OOP</li>
+            </ul>
+          </div>
+        </article>
+        <article>
+          <img src="assets/images/projects/portfolio-preview.svg" alt="Original illustration of this portfolio website"
+            loading="lazy" />
+          <div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive portfolio that presents my profile, skills, coursework projects, and contact information.
+            </p>
+            <ul aria-label="Tools used">
+              <li>HTML</li>
+              <li>Tailwind CSS</li>
               <li>Vanilla JavaScript</li>
             </ul>
-          </article>
-          <article class="skill-panel">
-            <h3>Ways I work</h3>
-            <ul>
-              <li>Problem solving</li>
-              <li>Curiosity</li>
-              <li>Creativity</li>
-              <li>Continuous learning</li>
-              <li>Attention to detail</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="scroll-mt-28 border-t border-white/10 py-16 sm:py-20">
-        <div class="mb-8 max-w-2xl">
-          <p class="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Selected work</p>
-          <h2 class="text-3xl font-bold text-white sm:text-4xl">Projects</h2>
-          <p class="mt-3 leading-7 text-slate-300">A few examples of what I have built and what I am learning.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="project-card">
-            <img src="assets/images/projects/space_eater.png" alt="Space Eater C++ project artwork" loading="lazy" />
-            <div>
-              <h3>Space Eater Background Program</h3>
-              <p>A C++ background application that launches automatically on startup and runs quietly outside the taskbar.</p>
-              <ul aria-label="Tools used">
-                <li>C++</li><li>File handling</li><li>System operations</li>
-              </ul>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="assets/images/projects/vending_machine.png" alt="Vending Machine System project artwork" loading="lazy" />
-            <div>
-              <h3>Vending Machine System</h3>
-              <p>A Java desktop application that simulates a vending machine with a graphical interface and object-oriented design.</p>
-              <ul aria-label="Tools used">
-                <li>Java</li><li>Swing UI</li><li>OOP</li>
-              </ul>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="assets/images/projects/portfolio-preview.svg" alt="Original illustration of this portfolio website" loading="lazy" />
-            <div>
-              <h3>Personal Portfolio Website</h3>
-              <p>A responsive portfolio that presents my profile, skills, coursework projects, and contact information.</p>
-              <ul aria-label="Tools used">
-                <li>HTML</li><li>Tailwind CSS</li><li>Vanilla JavaScript</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="education" class="scroll-mt-28 border-t border-white/10 py-16 sm:py-20">
-        <div class="mb-8 max-w-2xl">
-          <p class="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Learning journey</p>
-          <h2 class="text-3xl font-bold text-white sm:text-4xl">Education &amp; Experience</h2>
-        </div>
-        <ol class="relative ml-2 border-l border-cyan-300/40">
-          <li class="ml-6 pb-2">
-            <span class="absolute -left-2 mt-1.5 h-4 w-4 rounded-full border-4 border-slate-950 bg-cyan-300" aria-hidden="true"></span>
-            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-6">
-              <p class="text-sm font-semibold text-cyan-200">Coursework</p>
-              <h3 class="mt-1 text-xl font-semibold text-white">Advanced Web Development</h3>
-              <p class="mt-1 text-sm text-slate-400">IT ELEC01</p>
-              <p class="mt-3 leading-6 text-slate-300">Learning to plan, build, and review responsive websites using HTML, Tailwind CSS, and vanilla JavaScript.</p>
-            </article>
-          </li>
-        </ol>
-      </section>
-
-      <section id="contact" class="scroll-mt-28 border-t border-white/10 py-16 sm:py-20">
-        <div class="grid gap-10 lg:grid-cols-2">
-          <div>
-            <p class="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Say hello</p>
-            <h2 class="text-3xl font-bold text-white sm:text-4xl">Get in touch</h2>
-            <p class="mt-4 max-w-xl leading-7 text-slate-300">I’m open to learning opportunities and conversations about technology and projects.</p>
-            <div class="mt-7 flex flex-col items-start gap-3">
-              <a class="font-medium text-cyan-200 underline decoration-cyan-300/40 underline-offset-4 hover:text-white" href="mailto:bartolome.marc.whesley@gmail.com">bartolome.marc.whesley@gmail.com</a>
-              <a class="font-medium text-cyan-200 underline decoration-cyan-300/40 underline-offset-4 hover:text-white" href="https://github.com/thorvax" target="_blank" rel="noopener noreferrer">GitHub profile</a>
-            </div>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-6 sm:p-8">
-            <h3 class="text-xl font-semibold text-white">Send a message</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-300">This class-project form validates your entries and displays a confirmation in this browser. It does not send or store messages.</p>
-            <form id="contact-form" class="contact-form" novalidate>
-              <div>
-                <label for="contact-name">Your name</label>
-                <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" />
-              </div>
-              <div>
-                <label for="contact-email">Email address</label>
-                <input id="contact-email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div>
-                <label for="contact-message">Message</label>
-                <textarea id="contact-message" name="message" required minlength="5"></textarea>
-              </div>
-              <button type="submit">Validate message</button>
-              <p id="form-status" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
+        </article>
+      </div>
+    </section>
 
-    <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
-      <p>&copy; <span id="current-year">2026</span> Marc Whesley Bartolome. Built with HTML, Tailwind CSS, and vanilla JavaScript.</p>
-      <p class="mt-2">Project images are used from my existing portfolio assets. The portfolio preview illustration is original.</p>
-    </footer>
-  </body>
+    <section id="education" class="
+        scroll-mt-28
+        border-t
+        border-white/10
+        py-16
+        sm:py-20
+      ">
+      <div class="
+          mb-8
+          max-w-2xl
+        ">
+        <p class="
+            mb-2
+            text-sm
+            font-semibold
+            uppercase
+            tracking-[0.2em]
+            text-cyan-300
+          ">Learning journey</p>
+        <h2 class="
+            text-3xl
+            font-bold
+            text-white
+            sm:text-4xl
+          ">Education &amp; Experience</h2>
+      </div>
+      <ol class="
+          ml-2
+          border-l
+          border-cyan-300/40
+        ">
+        <li class="
+            ml-6
+            pb-2
+          ">
+
+          <article class="
+              rounded-2xl
+              border
+              border-white/10
+              bg-slate-900/70
+              p-6
+            ">
+            <p class="
+                text-sm
+                font-semibold
+                text-cyan-200
+              ">Coursework</p>
+            <h3 class="
+                mt-1
+                text-xl
+                font-semibold
+                text-white
+              ">Advanced Web Development</h3>
+            <p class="
+                mt-1
+                text-sm
+                text-slate-400
+              ">IT ELEC01</p>
+            <p class="
+                mt-3
+                leading-6
+                text-slate-300
+              ">Learning to plan, build, and review responsive websites using HTML, Tailwind CSS, and vanilla
+              JavaScript.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact" class="
+        scroll-mt-28
+        border-t
+        border-white/10
+        py-12
+        sm:py-16
+      ">
+      <h2 class="
+          bg-gradient-to-r
+          from-cyan-200
+          via-cyan-300
+          to-cyan-400
+          bg-clip-text
+          text-center
+          text-3xl
+          font-bold
+          text-transparent
+          sm:text-4xl
+        ">Get in touch</h2>
+
+      <div class="
+          mx-auto
+          mt-8
+          grid
+          max-w-3xl
+          grid-cols-1
+          gap-5
+          min-[500px]:grid-cols-2
+          min-[500px]:gap-20
+        ">
+        <article class="
+            rounded-2xl
+            border
+            border-cyan-500/70
+            bg-slate-950/20
+            p-3
+            shadow-lg
+            shadow-indigo-950/30
+          ">
+          <h3 class="
+              flex
+              items-center
+              gap-1.5
+              text-base
+              font-semibold
+              text-slate-100
+            ">
+            <img class="
+                h-4
+                w-4
+              " src="assets/icons/email-icon.png" alt="" aria-hidden="true" />
+            Send me a message
+          </h3>
+
+          <form id="contact-form" class="
+              mt-2
+              space-y-1.5
+
+              [&>div]:space-y-0.5
+
+              [&_label]:block
+              [&_label]:text-xs
+              [&_label]:text-slate-200
+
+              [&_input]:h-6
+              [&_input]:w-full
+              [&_input]:rounded-full
+              [&_input]:border
+              [&_input]:border-cyan-950
+              [&_input]:bg-slate-950/20
+              [&_input]:px-2
+              [&_input]:text-xs
+              [&_input]:text-slate-100
+              [&_input]:placeholder:text-slate-300/80
+
+              [&_input:focus]:border-cyan-300
+              [&_input:focus]:outline-none
+              [&_input:focus]:ring-1
+              [&_input:focus]:ring-cyan-300/40
+
+              [&_textarea]:h-24
+              [&_textarea]:w-full
+              [&_textarea]:resize-y
+              [&_textarea]:rounded-xl
+              [&_textarea]:border
+              [&_textarea]:border-cyan-950
+              [&_textarea]:bg-slate-950/20
+              [&_textarea]:px-2
+              [&_textarea]:py-1
+              [&_textarea]:text-xs
+              [&_textarea]:text-slate-100
+              [&_textarea]:placeholder:text-slate-300/80
+
+              [&_textarea:focus]:border-cyan-300
+              [&_textarea:focus]:outline-none
+              [&_textarea:focus]:ring-1
+              [&_textarea:focus]:ring-cyan-300/40
+
+              [&_button]:ml-auto
+              [&_button]:block
+              [&_button]:rounded-full
+              [&_button]:border
+              [&_button]:border-cyan-400/70
+              [&_button]:px-3
+              [&_button]:py-1
+              [&_button]:text-xs
+              [&_button]:font-medium
+              [&_button]:text-cyan-100
+              [&_button]:transition
+
+              [&_button:hover]:bg-cyan-400/10
+              [&_button:focus-visible]:outline-2
+              [&_button:focus-visible]:outline-offset-2
+              [&_button:focus-visible]:outline-cyan-200
+
+              [&>p]:min-h-4
+              [&>p]:text-xs
+              [&>p]:text-cyan-100
+            " novalidate>
+            <div>
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required
+                minlength="2" />
+            </div>
+            <div>
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" placeholder="your.email@example.com"
+                autocomplete="email" required />
+            </div>
+            <div>
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Your message here..." required
+                minlength="5"></textarea>
+            </div>
+            <button type="submit">Send message</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="
+            rounded-2xl
+            border
+            border-cyan-500/70
+            bg-slate-950/20
+            p-3
+            shadow-lg
+            shadow-indigo-950/30
+          ">
+          <h3 class="
+              flex
+              items-center
+              gap-1.5
+              text-base
+              font-semibold
+              text-slate-100
+            ">
+            <img class="
+                h-4
+                w-4
+              " src="assets/icons/click-icon.png" alt="" aria-hidden="true" />
+            Connect With me
+          </h3>
+
+          <div class="
+              mt-1
+              space-y-1
+
+              [&>a]:flex
+              [&>a]:min-h-7
+              [&>a]:items-center
+              [&>a]:gap-1.5
+              [&>a]:rounded-xl
+              [&>a]:border
+              [&>a]:border-cyan-950
+              [&>a]:bg-slate-950/20
+              [&>a]:px-2
+              [&>a]:py-1
+              [&>a]:transition
+
+              [&>a:hover]:border-cyan-500
+              [&>a:hover]:bg-cyan-400/5
+            ">
+            <a href="https://github.com/thorvax" target="_blank" rel="noopener noreferrer">
+              <img class="
+                  h-4
+                  w-4
+                " src="assets/icons/github-icon.png" alt="" aria-hidden="true" />
+              <span class="
+                  min-w-0
+                  leading-4
+                ">
+                <span class="
+                    block
+                    text-xs
+                    text-slate-200
+                  ">Github</span>
+                <span class="
+                    block
+                    text-[10px]
+                    text-slate-300
+                  ">@thorvax</span>
+              </span>
+            </a>
+            <a href="https://www.facebook.com/throvax" target="_blank" rel="noopener noreferrer">
+              <img class="
+                  h-4
+                  w-4
+                " src="assets/icons/fb-icon.png" alt="" aria-hidden="true" />
+              <span class="
+                  min-w-0
+                  leading-4
+                ">
+                <span class="
+                    block
+                    text-xs
+                    text-slate-200
+                  ">Facebook</span>
+                <span class="
+                    block
+                    text-[10px]
+                    text-slate-300
+                  ">@Throvax</span>
+              </span>
+            </a>
+            <a href="mailto:bartolome.marc.whesley@gmail.com">
+              <img class="
+                  h-4
+                  w-4
+                " src="assets/icons/email-icon.png" alt="" aria-hidden="true" />
+              <span class="
+                  min-w-0
+                  break-all
+                  leading-3
+                ">
+                <span class="
+                    block
+                    text-xs
+                    text-slate-200
+                  ">Email</span>
+                <span class="
+                    block
+                    text-[9px]
+                    text-slate-300
+                  ">bartolome.marc.whesley@gmail.com</span>
+              </span>
+            </a>
+          </div>
+
+          <p class="
+              mt-2
+              rounded-xl
+              border
+              border-cyan-950
+              bg-slate-950/20
+              p-2
+              text-xs
+              leading-4
+              text-slate-200
+            ">I'm always open to new opportunities and collaborations. Feel free to reach out if you'd like to discuss
+            a project or just say hello!</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="
+      border-t
+      border-white/10
+      px-5
+      py-8
+      text-center
+      text-sm
+      text-slate-400
+    ">
+    <p>&copy; <span id="current-year">2026</span> Marc Whesley Bartolome. Built with HTML, Tailwind CSS, and vanilla
+      JavaScript.</p>
+    <p class="
+        mt-2
+      ">Project images are used from my existing portfolio assets. The portfolio preview illustration is original.</p>
+  </footer>
+</body>
+
 </html>

@@ -2,7 +2,7 @@
 
 Assignment-ready, single-page portfolio using semantic HTML, Tailwind CSS via its Play CDN, and vanilla JavaScript. Open `index.html` in a browser with an internet connection so Tailwind can load.
 
-Repeated Tailwind utility groups are kept readable with component selectors in the Tailwind style block. For example, `.project-card` styles its direct image and content container with nested `& > img` and `& > div` rules, and the contact form groups its labels, fields, and button the same way.
+Repeated utility classes are grouped on their parent elements with Tailwind arbitrary child variants. For example, the project grid styles every direct article image with `[&>article>img]:...`, and the contact form styles its labels and controls with `[&_label]:...`, `[&_input]:...`, and `[&_button]:...`.
 
 ## Project structure
 
@@ -12,16 +12,17 @@ portfolio-submission/
 ├── js/
 │   └── main.js
 └── assets/
+    ├── icons/
     └── images/
         ├── profile/
         └── projects/
 ```
 
-## JavaScript features
+## JavaScript feature currently implemented
 
-1. Accessible mobile navigation toggle.
-2. Active navigation link based on the section currently in view.
-3. Client-side contact form validation and a local confirmation message. The form does not send or store information.
+- Accessible mobile navigation toggle. It opens and closes with the menu button and closes after a navigation link is selected.
+
+The assignment requires at least three JavaScript features. Add and document two more before submitting, such as active navigation highlighting and client-side contact form validation with a local confirmation message.
 
 ## Before submitting
 
