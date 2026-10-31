@@ -116,6 +116,7 @@ class ProjectController extends Controller
             'project_url.url' => 'Enter a full link, like https://example.com.',
             'repo_url.url' => 'Enter a full link, like https://github.com/you/repo.',
             'image.max' => 'The image must be 2 MB or smaller.',
+            'image.uploaded' => 'The image must be 2 MB or smaller.',
         ];
     }
 }
