@@ -9,11 +9,15 @@ export type ProjectFormData = {
     description: string;
     tech_stack: string;
     date_completed: string;
+    image: File | null;
+    project_url: string;
+    repo_url: string;
+
 };
 
 type Props = {
     form: ReturnType<typeof useForm<ProjectFormData>>;
-    onSubmit: (e: React.FormEvent) => void;
+    onSubmit: (e: React.SyntheticEvent) => void;
     submitLabel: string;
 };
 
@@ -49,6 +53,39 @@ export default function ProjectForm({ form, onSubmit, submitLabel }: Props) {
                     onChange={(e) => form.setData('tech_stack', e.target.value)}
                 />
                 <InputError message={form.errors.tech_stack} />
+            </div>
+            <div className="grid gap-2">
+                <Label htmlFor="project_url">Project URL (optional)</Label>
+                <Input
+                    id="project_url"
+                    type="url"
+                    placeholder="https://example.com"
+                    value={form.data.project_url}
+                    onChange={(e) => form.setData('project_url', e.target.value)}
+                />
+                <InputError message={form.errors.project_url} />
+            </div>
+
+            <div className="grid gap-2">
+                <Label htmlFor="repo_url">Repository URL (optional)</Label>
+                <Input
+                    id="repo_url"
+                    type="url"
+                    placeholder="https://github.com/you/repo"
+                    value={form.data.repo_url}
+                    onChange={(e) => form.setData('repo_url', e.target.value)}
+                />
+                <InputError message={form.errors.repo_url} />
+            </div>
+            <div className="grid gap-2">
+                <Label htmlFor="image">Project Image</Label>
+                <Input
+                    id="image"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => form.setData('image', e.target.files?.[0] ?? null)}
+                />
+                <InputError message={form.errors.image} />
             </div>
             <div className="grid gap-2">
                 <Label htmlFor="date_completed">Date completed</Label>

@@ -25,7 +25,7 @@ export default function Index({ projects }: Props) {
     return (
         <>
             <Head title="Manage Projects" />
-            <div className="mx-auto max-w-5xl p-6">
+            <div className="mx-auto w-full max-w-5xl p-6">
                 <div className="mb-6 flex items-center justify-between">
                     <h1 className="text-2xl font-bold">Projects</h1>
                     <Link
@@ -39,22 +39,22 @@ export default function Index({ projects }: Props) {
                 {projects.length === 0 ? (
                     <p>No projects yet.</p>
                 ) : (
-                    <table className="w-full text-left text-sm">
+                    <table className="w-full text-left text-sm [&>thead>tr>th]:py-2 [&>thead>tr>th]:pr-6">
                         <thead>
                             <tr className="border-b">
-                                <th className="py-2">Title</th>
-                                <th className="py-2">Tech stack</th>
-                                <th className="py-2">Completed</th>
-                                <th className="py-2">Actions</th>
+                                <th >Title</th>
+                                <th >Tech stack</th>
+                                <th >Completed</th>
+                                <th >Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {projects.map((project) => (
-                                <tr key={project.id} className="border-b">
-                                    <td className="py-3">{project.title}</td>
-                                    <td className="py-3">{project.tech_stack}</td>
-                                    <td className="py-3">{project.date_completed}</td>
-                                    <td className="flex gap-3 py-3">
+                                <tr key={project.id} className="border-b  [&>td]:py-3 [&>td]:pr-6">
+                                    <td>{project.title}</td>
+                                    <td>{project.tech_stack}</td>
+                                    <td>{project.date_completed}</td>
+                                    <td className="flex gap-3">
                                         <Link href={`/projects/${project.id}/edit`} className="underline">
                                             Edit
                                         </Link>
@@ -71,7 +71,7 @@ export default function Index({ projects }: Props) {
                         </tbody>
                     </table>
                 )}
-            </div>
+            </div >
         </>
     );
 }

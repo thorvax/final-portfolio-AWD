@@ -7,9 +7,12 @@ export default function Create() {
         description: '',
         tech_stack: '',
         date_completed: '',
+        image: null,
+        project_url: '',
+        repo_url: '',
     });
 
-    function submit(e: React.FormEvent) {
+    function submit(e: React.SyntheticEvent) {
         e.preventDefault();
         form.post('/projects');
     }

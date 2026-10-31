@@ -33,34 +33,17 @@ const workStyle = [
     'Attention to detail',
 ];
 
-const projects = [
-    {
-        title: 'Space Eater Background Program',
-        description:
-            'A C++ background application that launches automatically on startup and runs quietly outside the taskbar.',
-        tools: ['C++', 'File handling', 'System operations'],
-        image: '/assets/images/projects/space_eater.png',
-        imageAlt: 'Space Eater C++ project artwork',
-    },
-    {
-        title: 'Vending Machine System',
-        description:
-            'A Java desktop application that simulates a vending machine with a graphical interface and object-oriented design.',
-        tools: ['Java', 'Swing UI', 'OOP'],
-        image: '/assets/images/projects/vending_machine.png',
-        imageAlt: 'Vending Machine System project artwork',
-    },
-    {
-        title: 'Personal Portfolio Website',
-        description:
-            'A responsive portfolio that presents my profile, skills, coursework projects, and contact information.',
-        tools: ['HTML', 'Tailwind CSS', 'Vanilla JavaScript'],
-        image: '/assets/images/projects/portfolio-preview.svg',
-        imageAlt: 'Original illustration of this portfolio website',
-    },
-];
-
-export default function Home() {
+type Project = {
+    id: number;
+    title: string;
+    description: string;
+    tech_stack: string;
+    project_url: string | null;
+    repo_url: string | null;
+    image: string | null;
+    date_completed: string;
+};
+export default function Home({ projects }: { projects: Project[] }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [tagline, setTagline] = useState('');
     const [fact, setFact] = useState('');
@@ -253,7 +236,16 @@ export default function Home() {
           [&>article>div>ul>li]:text-cyan-100
         ">
                         {projects.map((project) => (
-                            <ProjectCard key={project.title} {...project} />
+                            <ProjectCard
+                                key={project.id}
+                                title={project.title}
+                                description={project.description}
+                                tools={project.tech_stack.split(',').map((t) => t.trim())}
+                                image={project.image ? `/storage/${project.image}` : '/assets/images/projects/portfolio-preview.svg'}
+                                imageAlt={`${project.title} screenshot`}
+                                projectUrl={project.project_url}
+                                repoUrl={project.repo_url}
+                            />
                         ))}
                     </div>
                 </section>
